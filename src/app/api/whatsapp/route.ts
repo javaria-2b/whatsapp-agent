@@ -49,7 +49,9 @@ export async function POST(request: NextRequest) {
       success: true,
       message: "Message processed and reply sent.",
     });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
+    
     console.error("Error processing request:", error);
     return NextResponse.json(
       { error: "Failed to process request", details: error.message },
